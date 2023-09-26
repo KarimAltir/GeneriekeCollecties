@@ -1,6 +1,6 @@
 ﻿using GeneriekeCollecties;
 
-Stapel<int> stapel = new Stapel<int>();
+Stapel<string> stapel = new Stapel<string>();
 char keuze = '0';
 
 do
@@ -9,7 +9,8 @@ do
     Console.WriteLine("0 Stoppen");
     Console.WriteLine("1 Opzetten");
     Console.WriteLine("2 Afhallen");
-    Console.WriteLine("3 Leeg maken");
+    Console.WriteLine("3 De Lijst tonnen");
+    Console.WriteLine("4 Leeg maken");
     Console.Write("Geef je keuze en druk [enter]:");
     keuze = Console.ReadLine()[0];
     Console.WriteLine();
@@ -17,12 +18,12 @@ do
     switch (keuze)
     {
         case '0':
-            Console.WriteLine("stoppen");
+            Console.WriteLine("afsluiten");
             break;
 
         case '1':
             Console.Write("Wat wil je stappelen:");
-            stapel.Opzetten(Convert.ToInt32(Console.ReadLine()));
+            stapel.Opzetten(Console.ReadLine());
             break;
 
         case '2':
@@ -30,6 +31,12 @@ do
             break;
 
         case '3':
+            Console.WriteLine("De lijst van de producten: ");
+            Console.Write(stapel.ToString());
+            Console.WriteLine();
+            break;
+
+        case '4':
             stapel.LeegMaken();
             Console.WriteLine("De sapel word leeg gemaakt");
             break;
